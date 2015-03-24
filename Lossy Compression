@@ -1,0 +1,36 @@
+image_tif = imread('image01.tif');
+image = double(image_tif)/255;
+[U,S,V]=svd(image);
+dimensions = size(image);
+
+
+numberToUse = 2;
+Usmall = U(1:dimensions(1,1),1:numberToUse);
+Ssmall = S(1:numberToUse,1:numberToUse);
+Vsmall = V(1:dimensions(1,2),1:numberToUse);
+imageSmall = Usmall*Ssmall*Vsmall';
+imwrite(imageSmall,'imageSmall2.tif');
+
+
+numberToUse = 8;
+Usmall = U(1:dimensions(1,1),1:numberToUse);
+Ssmall = S(1:numberToUse,1:numberToUse);
+Vsmall = V(1:dimensions(1,2),1:numberToUse);
+imageSmall = Usmall*Ssmall*Vsmall';
+imwrite(imageSmall,'imageSmall8.tif');
+
+
+numberToUse = 32;
+Usmall = U(1:dimensions(1,1),1:numberToUse);
+Ssmall = S(1:numberToUse,1:numberToUse);
+Vsmall = V(1:dimensions(1,2),1:numberToUse);
+imageSmall = Usmall*Ssmall*Vsmall';
+imwrite(imageSmall,'imageSmall32.tif');
+
+
+numberToUse = 128;
+Usmall = U(1:dimensions(1,1),1:numberToUse);
+Ssmall = S(1:numberToUse,1:numberToUse);
+Vsmall = V(1:dimensions(1,2),1:numberToUse);
+imageSmall = Usmall*Ssmall*Vsmall';
+imwrite(imageSmall,'imageSmall128.tif');
